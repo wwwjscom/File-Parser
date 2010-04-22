@@ -4,7 +4,7 @@ require "code/comma"
 class TestComma < Test::Unit::TestCase
   
   DOB  = "1/2/2001"
-  LINE = "Abercrombie, Neil, Male, Tan, 2/13/1943"
+  LINE = "Abercrombie, Neil, Male, Tan, 2/13/1943\n"
   
   def test_parse_dob
     dob = Comma.parse_dob(DOB)
