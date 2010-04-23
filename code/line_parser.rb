@@ -16,6 +16,6 @@ module LineParser
   # Converts an array into a Date object
   def self.dob(dob)
     #yyyy-mm-dd
-    Date.parse("#{dob[2]}-#{dob[0]}-#{dob[1]}")
+    Date.new(dob[2], dob[0], dob[1])
   end
 end
