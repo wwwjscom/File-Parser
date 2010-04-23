@@ -43,7 +43,9 @@ class Records
   def to_s
     lines = []
     @entries.each do |e|
-      lines << "#{e.ln}, #{e.fn}, #{e.sex}, #{e.dob.strftime('%m/%d/%Y')}, #{e.fav_color}\n"
+      # I would prefer to use e.dob.strftime("%m/%d/%Y") here, but can't find an
+      # easy way to ditch the leading zeros for months/days < 10...so we have this ugliness
+      lines << %{#{e.ln} #{e.fn} #{e.sex} #{e.dob.month}/#{e.dob.day}/#{e.dob.year} #{e.fav_color}\n}
     end
     lines.to_s
   end

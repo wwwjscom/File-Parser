@@ -9,7 +9,7 @@ class Main
   
   # Execute the program.  Sorting method is clearly defined
   # inside the case statement.
-  def self.run(sorting_method)
+  def self.run(sorting_method, print = true)
     r = Records.new
     lines = FileReader.read_dir("input")
     
@@ -21,7 +21,8 @@ class Main
       when 3 then r.sort_by_ln!
     end
     
-    puts r.to_s
+    puts r.to_s if print # for testing purposes
+    return r.to_s # for testing purposes again
   end
   
 end
