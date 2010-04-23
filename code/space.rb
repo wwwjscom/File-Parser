@@ -1,17 +1,16 @@
 require "code/inputFile"
 require "code/line_parser"
 
-class Comma < InputFile
+class Space < InputFile
   
-  # Parse a comma DOB
+  # Not DRY: Pipe::parse_dob
   def self.parse_dob(dob)
-    LineParser.dob_to_h(dob.split('/').map(&:to_i))
+    LineParser.dob_to_h(dob.split('-').map(&:to_i))
   end
-    
-  # Parse a particular line
+  
   def self.parse_line(line)
-    fn, ln, sex, fav_color, dob = line.split(', ')
-    LineParser.to_h(fn, ln, nil, sex, fav_color, parse_dob(dob))
+    fn, ln, mi, sex, dob, fav_color = line.split(' ')
+    LineParser.to_h(fn, ln, mi, sex, fav_color, parse_dob(dob))
   end
   
   # Takes a file object and parses its contents
@@ -23,5 +22,5 @@ class Comma < InputFile
     end
     lines
   end
-end
   
+end

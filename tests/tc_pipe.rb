@@ -44,4 +44,19 @@ class TestPipe < Test::Unit::TestCase
     assert_equal(1985, pl[:dob][:year])
   end
   
+  def test_parse_file
+    pf = Pipe.parse_file(File.open("input/pipe.txt"))
+    assert_kind_of(Array, pf)
+    
+    pl = pf[0]
+    assert_equal("Steve", pl[:ln])
+    assert_equal("Smith", pl[:fn])
+    assert_equal("D", pl[:mi])
+    assert_equal("Male", pl[:sex])
+    assert_equal("Red", pl[:fav_color])
+    assert_equal(3, pl[:dob][:day])
+    assert_equal(3, pl[:dob][:month])
+    assert_equal(1985, pl[:dob][:year])
+  end
+  
 end
