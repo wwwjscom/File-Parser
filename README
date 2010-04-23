@@ -1,4 +1,4 @@
--- Running -- 
+-- RUNNING -- 
 From the root dir of the program, running
 $ rake -T
 will give you a list of runnable tasks.  Output numbers match with the desired output numbering scheme listed online.
