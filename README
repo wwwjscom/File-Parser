@@ -1,0 +1,18 @@
+-- Running -- 
+From the root dir of the program, running
+$ rake -T
+will give you a list of runnable tasks.  Output numbers match with the desired output numbering scheme listed online.
+
+For completeness, here is a listing of the commands:
+rake output_1    # Sort by gender (females > males) then by LN ASC
+rake output_2    # Sort by DOB ASC
+rake output_3    # Sort by LN DESC
+rake test_units  # Run tests for test_units
+
+-- COMMENTS --
+No yaml files are used since its assumed the location of the input files wont change.  Besides, its sort of overkill to create a config file for the options available for this task, in my humble opinion.
+Also, rdocs are included just for completeness and to save the end-user the time of generating them.
+
+-- VERSIONS --
+ruby -v: ruby 1.8.7 (2008-08-11 patchlevel 72) [universal-darwin10.0]
+rake --version: rake, version 0.8.3
