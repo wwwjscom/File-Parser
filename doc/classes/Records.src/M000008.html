@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>to_s (Records)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File code/records.rb, line 43</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_s</span>
+    <span class="ruby-identifier">lines</span> = []
+    <span class="ruby-ivar">@entries</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">e</span><span class="ruby-operator">|</span>
+      <span class="ruby-comment cmt"># I would prefer to use e.dob.strftime(&quot;%m/%d/%Y&quot;) here, but can't find an</span>
+      <span class="ruby-comment cmt"># easy way to ditch the leading zeros for months/days &lt; 10...so we have this ugliness</span>
+      <span class="ruby-identifier">lines</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">%{#{e.ln} #{e.fn} #{e.sex} #{e.dob.month}/#{e.dob.day}/#{e.dob.year} #{e.fav_color}\n}</span>
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-identifier">lines</span>.<span class="ruby-identifier">to_s</span>
+  <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>
