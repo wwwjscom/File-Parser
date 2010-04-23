@@ -16,8 +16,8 @@ class TestComma < Test::Unit::TestCase
   def test_parse_line
     pl = Comma.parse_line(LINE)
     assert_instance_of(Hash, pl)
-    assert_equal("Abercrombie", pl[:fn])
-    assert_equal("Neil", pl[:ln])
+    assert_equal("Neil", pl[:fn])
+    assert_equal("Abercrombie", pl[:ln])
     assert_equal("Male", pl[:sex])
     assert_equal("Tan", pl[:fav_color])
     assert_equal(13, pl[:dob].day)
@@ -32,8 +32,8 @@ class TestComma < Test::Unit::TestCase
     
     pl = pf[0]
     assert_instance_of(Hash, pl)
-    assert_equal("Abercrombie", pl[:fn])
-    assert_equal("Neil", pl[:ln])
+    assert_equal("Neil", pl[:fn])
+    assert_equal("Abercrombie", pl[:ln])
     assert_equal("Male", pl[:sex])
     assert_equal("Tan", pl[:fav_color])
     assert_equal(13, pl[:dob].day)

@@ -18,8 +18,8 @@ class TestSpace < Test::Unit::TestCase
     pl = Space.parse_line(LINE)
     
     assert_kind_of(Hash, pl)
-    assert_equal("Kournikova", pl[:fn])
-    assert_equal("Anna", pl[:ln])
+    assert_equal("Anna", pl[:fn])
+    assert_equal("Kournikova", pl[:ln])
     assert_equal("F", pl[:mi])
     assert_equal("Female", pl[:sex])
     assert_equal("Red", pl[:fav_color])
@@ -41,8 +41,8 @@ class TestSpace < Test::Unit::TestCase
     
     pl = pf[0]
     assert_kind_of(Hash, pl)
-    assert_equal("Kournikova", pl[:fn])
-    assert_equal("Anna", pl[:ln])
+    assert_equal("Anna", pl[:fn])
+    assert_equal("Kournikova", pl[:ln])
     assert_equal("F", pl[:mi])
     assert_equal("Female", pl[:sex])
     assert_equal("Red", pl[:fav_color])
