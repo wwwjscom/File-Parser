@@ -9,12 +9,7 @@ class TestRecord < Test::Unit::TestCase
       :mi        => "K",
       :sex       => "Male", 
       :fav_color => "Blue", 
-      :dob       =>
-      {
-        :day   => 8,
-        :month => 18,
-        :year  => 1986
-      }
+      :dob       => Date.new(1986, 8, 18)
     }  
   
   def test_crate
@@ -24,8 +19,8 @@ class TestRecord < Test::Unit::TestCase
     assert_equal(ATTRIBUTES[:mi], r.mi)
     assert_equal(ATTRIBUTES[:sex], r.sex)
     assert_equal(ATTRIBUTES[:fav_color], r.fav_color)
-    assert_equal(ATTRIBUTES[:dob][:day], r.dob[:day])
-    assert_equal(ATTRIBUTES[:dob][:month], r.dob[:month])
-    assert_equal(ATTRIBUTES[:dob][:year], r.dob[:year])
+    assert_equal(ATTRIBUTES[:dob].day, r.dob.day)
+    assert_equal(ATTRIBUTES[:dob].month, r.dob.month)
+    assert_equal(ATTRIBUTES[:dob].year, r.dob.year)
   end
 end
