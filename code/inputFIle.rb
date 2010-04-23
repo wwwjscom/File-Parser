@@ -28,6 +28,16 @@ class InputFile
 		end
 	end
 	
+	# Takes in an objects of one of InputFile's children
+	# parses the file and returns the lines.
+  def parse_file(file_class)
+    lines = []
+    while line = @file_desc.gets
+      lines << file_class.parse_line(line)
+    end
+    lines
+  end
+	
 	# Close up the file
 	def close
 	 @file_desc.close

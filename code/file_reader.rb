@@ -25,9 +25,9 @@ class FileReader
   def self.parse_a_file(file_path)
     input_file = InputFile.new(file_path)
     l = case input_file.file_type
-      when :comma then Comma.parse_file(input_file.file_desc)
-      when :space then Space.parse_file(input_file.file_desc)
-      when :pipe  then  Pipe.parse_file(input_file.file_desc)
+      when :comma then input_file.parse_file(Comma.new)
+      when :space then input_file.parse_file(Space.new)
+      when :pipe  then input_file.parse_file(Pipe.new)
     end
     input_file.close
     l
