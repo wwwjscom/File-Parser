@@ -9,9 +9,9 @@ class TestPipe < Test::Unit::TestCase
   
   def test_parse_dob
     dob = Pipe.parse_dob(DOB)
-    assert_equal(3, dob[:day])
-    assert_equal(3, dob[:month])
-    assert_equal(1985, dob[:year])  
+    assert_equal(3, dob.day)
+    assert_equal(3, dob.month)
+    assert_equal(1985, dob.year)  
   end
   
   # Test a male line
@@ -24,9 +24,9 @@ class TestPipe < Test::Unit::TestCase
     assert_equal("D", pl[:mi])
     assert_equal("Male", pl[:sex])
     assert_equal("Red", pl[:fav_color])
-    assert_equal(3, pl[:dob][:day])
-    assert_equal(3, pl[:dob][:month])
-    assert_equal(1985, pl[:dob][:year])
+    assert_equal(3, pl[:dob].day)
+    assert_equal(3, pl[:dob].month)
+    assert_equal(1985, pl[:dob].year)
   end
 
   # Test a female line
@@ -39,9 +39,9 @@ class TestPipe < Test::Unit::TestCase
     assert_equal("D", pl[:mi])
     assert_equal("Female", pl[:sex])
     assert_equal("Red", pl[:fav_color])
-    assert_equal(3, pl[:dob][:day])
-    assert_equal(3, pl[:dob][:month])
-    assert_equal(1985, pl[:dob][:year])
+    assert_equal(3, pl[:dob].day)
+    assert_equal(3, pl[:dob].month)
+    assert_equal(1985, pl[:dob].year)
   end
   
   def test_parse_file
@@ -55,9 +55,9 @@ class TestPipe < Test::Unit::TestCase
     assert_equal("D", pl[:mi])
     assert_equal("Male", pl[:sex])
     assert_equal("Red", pl[:fav_color])
-    assert_equal(3, pl[:dob][:day])
-    assert_equal(3, pl[:dob][:month])
-    assert_equal(1985, pl[:dob][:year])
+    assert_equal(3, pl[:dob].day)
+    assert_equal(3, pl[:dob].month)
+    assert_equal(1985, pl[:dob].year)
   end
   
 end

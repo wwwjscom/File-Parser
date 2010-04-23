@@ -9,9 +9,9 @@ class TestSpace < Test::Unit::TestCase
   
   def test_parse_dob
     dob = Space.parse_dob(DOB)
-    assert_equal(6, dob[:day])
-    assert_equal(3, dob[:month])
-    assert_equal(1975, dob[:year])
+    assert_equal(3, dob.day)
+    assert_equal(6, dob.month)
+    assert_equal(1975, dob.year)
   end
   
   def test_parse_line_female
@@ -23,9 +23,9 @@ class TestSpace < Test::Unit::TestCase
     assert_equal("F", pl[:mi])
     assert_equal("Female", pl[:sex])
     assert_equal("Red", pl[:fav_color])
-    assert_equal(6, pl[:dob][:day])
-    assert_equal(3, pl[:dob][:month])
-    assert_equal(1975, pl[:dob][:year])
+    assert_equal(3, pl[:dob].day)
+    assert_equal(6, pl[:dob].month)
+    assert_equal(1975, pl[:dob].year)
   end
 
   def test_parse_line_male
@@ -46,9 +46,9 @@ class TestSpace < Test::Unit::TestCase
     assert_equal("F", pl[:mi])
     assert_equal("Female", pl[:sex])
     assert_equal("Red", pl[:fav_color])
-    assert_equal(6, pl[:dob][:day])
-    assert_equal(3, pl[:dob][:month])
-    assert_equal(1975, pl[:dob][:year])
+    assert_equal(3, pl[:dob].day)
+    assert_equal(6, pl[:dob].month)
+    assert_equal(1975, pl[:dob].year)
   end
   
 end

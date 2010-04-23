@@ -5,7 +5,7 @@ class Space < InputFile
   
   # Not DRY: Pipe::parse_dob
   def self.parse_dob(dob)
-    LineParser.dob_to_h(dob.split('-').map(&:to_i))
+    LineParser.dob(dob.split('-').map(&:to_i))
   end
   
   def self.parse_line(line)

@@ -5,7 +5,7 @@ class Comma < InputFile
   
   # Parse a comma DOB
   def self.parse_dob(dob)
-    LineParser.dob_to_h(dob.split('/').map(&:to_i))
+    LineParser.dob(dob.split('/').map(&:to_i))
   end
     
   # Parse a particular line

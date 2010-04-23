@@ -15,4 +15,12 @@ class Records
     @entries.size
   end
   
+  def get(i)
+    @entries[i]
+  end
+  
+  def sort_by_dob
+    @entries.sort! { |a,b| (a.dob <=> b.dob) }
+  end
+  
 end

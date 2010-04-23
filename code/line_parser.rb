@@ -1,3 +1,5 @@
+require "date"
+
 module LineParser
   
   def self.to_h(fn, ln, mi, sex, fav_color, dob)
@@ -11,11 +13,9 @@ module LineParser
     }
   end
   
-  def self.dob_to_h(dob_array)
-    { 
-      :day   => dob_array[0],
-      :month => dob_array[1],
-      :year  => dob_array[2]
-    }
+  # Converts an array into a Date object
+  def self.dob(dob)
+    #yyyy-mm-dd
+    Date.parse("#{dob[2]}-#{dob[0]}-#{dob[1]}")
   end
 end

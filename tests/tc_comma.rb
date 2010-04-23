@@ -8,9 +8,9 @@ class TestComma < Test::Unit::TestCase
   
   def test_parse_dob
     dob = Comma.parse_dob(DOB)
-    assert_equal(1, dob[:day])
-    assert_equal(2, dob[:month])
-    assert_equal(2001, dob[:year])
+    assert_equal(2, dob.day)
+    assert_equal(1, dob.month)
+    assert_equal(2001, dob.year)
   end
   
   def test_parse_line
@@ -20,9 +20,9 @@ class TestComma < Test::Unit::TestCase
     assert_equal("Neil", pl[:ln])
     assert_equal("Male", pl[:sex])
     assert_equal("Tan", pl[:fav_color])
-    assert_equal(2, pl[:dob][:day])
-    assert_equal(13, pl[:dob][:month])
-    assert_equal(1943, pl[:dob][:year])
+    assert_equal(13, pl[:dob].day)
+    assert_equal(2, pl[:dob].month)
+    assert_equal(1943, pl[:dob].year)
   end
   
   def test_parse_file
@@ -36,9 +36,9 @@ class TestComma < Test::Unit::TestCase
     assert_equal("Neil", pl[:ln])
     assert_equal("Male", pl[:sex])
     assert_equal("Tan", pl[:fav_color])
-    assert_equal(2, pl[:dob][:day])
-    assert_equal(13, pl[:dob][:month])
-    assert_equal(1943, pl[:dob][:year])
+    assert_equal(13, pl[:dob].day)
+    assert_equal(2, pl[:dob].month)
+    assert_equal(1943, pl[:dob].year)
   end
   
 end
