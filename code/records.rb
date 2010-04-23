@@ -29,8 +29,7 @@ class Records
   end
   
   def sort_by_sex_then_ln!
-    @entries.sort! { |a,b| a.sex <=> b.sex }
-    @entries.sort! { |a,b| a.ln <=> b.ln }
+    @entries.sort! { |a,b| [a.sex, a.ln] <=> [b.sex, b.ln] }
   end
   
   def to_s

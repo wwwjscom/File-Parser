@@ -10,7 +10,7 @@ class Main
     lines.each do |l|
       r << Record.new(l)
     end
-    r.sort_by_ln!
+    r.sort_by_sex_then_ln!
     puts r.to_s
   end
   

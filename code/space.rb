@@ -9,7 +9,7 @@ class Space < InputFile
   end
   
   def self.parse_line(line)
-    fn, ln, mi, sex, dob, fav_color = line.split(' ')
+    ln, fn, mi, sex, dob, fav_color = line.split(' ')
     LineParser.to_h(fn, ln, mi, sex, fav_color, parse_dob(dob))
   end
   

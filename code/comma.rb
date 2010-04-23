@@ -10,7 +10,7 @@ class Comma < InputFile
     
   # Parse a particular line
   def self.parse_line(line)
-    fn, ln, sex, fav_color, dob = line.split(', ')
+    ln, fn, sex, fav_color, dob = line.split(', ')
     LineParser.to_h(fn, ln, nil, sex, fav_color, parse_dob(dob))
   end
   
