@@ -1,3 +1,4 @@
+# A record object for easy access to its many attributes
 class Record
 
   attr_reader :fn, :ln, :mi, :sex, :fav_color, :dob

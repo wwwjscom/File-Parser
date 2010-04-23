@@ -1,7 +1,10 @@
 require "date"
 
+# This module helps the parser classes (classes that are children of InputFile)
 module LineParser
   
+  # Converts a list of attributes into a hash while
+  # doing some nice conversions for printing pleasure
   def self.to_h(fn, ln, mi, sex, fav_color, dob)
     { 
       :fn        => fn, 

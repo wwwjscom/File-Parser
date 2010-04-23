@@ -3,6 +3,8 @@ require "code/comma"
 require "code/pipe"
 require "code/space"
 
+# This class interfaces with InputFile and its children to provide an
+# easier way to read various formatted files.
 class FileReader
 
   # Reads all files within a specific directory
