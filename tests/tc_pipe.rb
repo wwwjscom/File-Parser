@@ -47,6 +47,7 @@ class TestPipe < Test::Unit::TestCase
   def test_parse_file
     pf = Pipe.parse_file(File.open("input/pipe.txt"))
     assert_kind_of(Array, pf)
+    assert_equal(3, pf.size)
     
     pl = pf[0]
     assert_equal("Steve", pl[:ln])

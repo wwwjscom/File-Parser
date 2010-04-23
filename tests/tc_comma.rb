@@ -28,6 +28,7 @@ class TestComma < Test::Unit::TestCase
   def test_parse_file
     pf = Comma.parse_file(File.open("input/comma.txt"))
     assert_instance_of(Array, pf)
+    assert_equal(3, pf.size)
     
     pl = pf[0]
     assert_instance_of(Hash, pl)

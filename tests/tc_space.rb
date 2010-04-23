@@ -37,6 +37,7 @@ class TestSpace < Test::Unit::TestCase
   def test_parse_file
     pf = Space.parse_file(File.open("input/space.txt"))
     assert_kind_of(Array, pf)
+    assert_equal(3, pf.size)
     
     pl = pf[0]
     assert_kind_of(Hash, pl)
