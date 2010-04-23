@@ -19,8 +19,26 @@ class Records
     @entries[i]
   end
   
-  def sort_by_dob
-    @entries.sort! { |a,b| (a.dob <=> b.dob) }
+  def sort_by_dob!
+    @entries.sort! { |a,b| a.dob <=> b.dob }
+  end
+  
+  def sort_by_ln!
+    @entries.sort! { |a,b| a.ln <=> b.ln }
+    @entries.reverse!
+  end
+  
+  def sort_by_sex_then_ln!
+    @entries.sort! { |a,b| a.sex <=> b.sex }
+    @entries.sort! { |a,b| a.ln <=> b.ln }
+  end
+  
+  def to_s
+    lines = []
+    @entries.each do |e|
+      lines << "#{e.ln}, #{e.fn}, #{e.sex}, #{e.dob.strftime('%m/%d/%Y')}, #{e.fav_color}\n"
+    end
+    lines.to_s
   end
   
 end

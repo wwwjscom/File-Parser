@@ -1,5 +1,6 @@
 require "code/file_reader"
 require "code/records"
+require "code/record"
 
 class Main
   
@@ -9,7 +10,10 @@ class Main
     lines.each do |l|
       r << Record.new(l)
     end
-    r.to_s
+    r.sort_by_ln!
+    puts r.to_s
   end
   
 end
+
+Main.run

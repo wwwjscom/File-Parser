@@ -1,4 +1,7 @@
 require "code/inputFile"
+require "code/comma"
+require "code/pipe"
+require "code/space"
 
 class FileReader
 

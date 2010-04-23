@@ -34,6 +34,11 @@ class TestRecords < Test::Unit::TestCase
   
   def setup
     @r = Records.new
+    
+    @records = Records.new
+    @records << Record.new(ATTRIBUTES)
+    @records << Record.new(ATTRIBUTES_2)
+    @records << Record.new(ATTRIBUTES_3)
   end
   
   def test_push
@@ -47,12 +52,24 @@ class TestRecords < Test::Unit::TestCase
   end
   
   def test_sort_by_dob
-    @r << Record.new(ATTRIBUTES)
-    @r << Record.new(ATTRIBUTES_2)
-    @r << Record.new(ATTRIBUTES_3)
-    @r.sort_by_dob
-    assert_equal(1953, @r.get(0).dob.year)
-    assert_equal(1986, @r.get(1).dob.year)
-    assert_equal(1987, @r.get(2).dob.year)
+    @records.sort_by_dob!
+    assert_equal(1953, @records.get(0).dob.year)
+    assert_equal(1986, @records.get(1).dob.year)
+    assert_equal(1987, @records.get(2).dob.year)
   end
+  
+  def test_sort_by_ln
+    @records.sort_by_ln!
+    assert_equal("Soo", @records.get(0).ln)
+    assert_equal("Corden", @records.get(1).ln)
+    assert_equal("Bostwick", @records.get(2).ln)
+  end
+  
+  def test_sort_by_sex_then_ln
+    @records.sort_by_sex_then_ln!
+    assert_equal("Bostwick", @records.get(0).ln)
+    assert_equal("Corden", @records.get(1).ln)
+    assert_equal("Soo", @records.get(2).ln)
+  end
+  
 end
