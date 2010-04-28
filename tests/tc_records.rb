@@ -1,4 +1,6 @@
 require "code/records"
+require "test/unit"
+require "date"
 
 class TestRecords < Test::Unit::TestCase
   

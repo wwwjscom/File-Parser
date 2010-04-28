@@ -1,4 +1,5 @@
 require "code/record"
+require "test/unit"
 
 class TestRecord < Test::Unit::TestCase
   
