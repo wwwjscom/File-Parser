@@ -1,0 +1,93 @@
+h2. Running
+
+From the root dir of the program, running @$ rake -T@ will give you a list of runnable tasks.  Output numbers match with the desired output numbering scheme listed online.
+
+For completeness, here is a listing of the commands:
+
+bc. rake output_1    # Sort by gender (females > males) then by LN ASC
+rake output_2    # Sort by DOB ASC
+rake output_3    # Sort by LN DESC
+rake test_units  # Run tests for test_units
+
+h2. Comments
+
+No yaml files are used since its assumed the location of the input files wont change.  Besides, its sort of overkill to create a config file for the options available for this task, in my humble opinion.  Also, rdocs are included just for completeness and to save the end-user the time of generating them.
+
+h2. Versions
+
+bc. ruby -v: ruby 1.8.7 (2008-08-11 patchlevel 72) [universal-darwin10.0]
+rake --version: rake, version 0.8.3
+
+h2. PROBLEM DESCRIPTION
+
+Write a Ruby program to first assemble a single set of records by parsing data from 3 different file formats and then display these records sorted in 3 different ways.
+
+h3. Details
+
+h4. The Data
+
+A record consists of the following 5 fields: last name, first name, gender, date of birth and favorite color. You will be given 3 files, each containing records stored in a different format.
+
+The pipe-delimited file lists each record as follows: 
+@LastName | FirstName | MiddleInitial | Gender | FavoriteColor | DateOfBirth@
+
+The comma-delimited file looks like this: 
+@LastName, FirstName, Gender, FavoriteColor, DateOfBirth@
+
+And lastly, the space-delimited file: 
+@LastName FirstName MiddleInitial Gender DateOfBirth FavoriteColor@
+
+You may assume that the delimiters (commas, pipes and spaces) do not appear anywhere in the data values themselves. Write a Ruby program to read in records from these files and combine them into a single set of records.
+
+h4. Display Requirements
+
+Create and display 3 different views of the recordset (see a sample here):
+* Output 1 – sorted by gender (females before males) then by last name ascending.
+* Output 2 – sorted by birth date, ascending.
+* Output 3 – sorted by last name, descending.
+
+Ensure that fields are displayed in the following order: @last name, first name, gender, date of birth, favorite color.@
+Display dates in the format MM/DD/YYYY.
+
+
+h3. SAMPLE INPUT FILES
+
+See @input/*.txt@ for the sample input files.
+
+h3. DESIRED OUTPUT
+
+* Output 1:
+
+bc. Hingis Martina Female 4/2/1979 Green
+Kelly Sue Female 7/12/1959 Pink
+Kournikova Anna Female 6/3/1975 Red
+Seles Monica Female 12/2/1973 Black
+Abercrombie Neil Male 2/13/1943 Tan
+Bishop Timothy Male 4/23/1967 Yellow
+Bonk Radek Male 6/3/1975 Green
+Bouillon Francis Male 6/3/1975 Blue
+Steve Smith Male 3/3/1985 Red
+
+* Output 2:
+
+bc. Abercrombie Neil Male 2/13/1943 Tan
+Kelly Sue Female 7/12/1959 Pink
+Bishop Timothy Male 4/23/1967 Yellow
+Seles Monica Female 12/2/1973 Black
+Bonk Radek Male 6/3/1975 Green
+Bouillon Francis Male 6/3/1975 Blue
+Kournikova Anna Female 6/3/1975 Red
+Hingis Martina Female 4/2/1979 Green
+Steve Smith Male 3/3/1985 Red
+
+* Output 3:
+
+bc. Steve Smith Male 3/3/1985 Red
+Seles Monica Female 12/2/1973 Black
+Kournikova Anna Female 6/3/1975 Red
+Kelly Sue Female 7/12/1959 Pink
+Hingis Martina Female 4/2/1979 Green
+Bouillon Francis Male 6/3/1975 Blue
+Bonk Radek Male 6/3/1975 Green
+Bishop Timothy Male 4/23/1967 Yellow
+Abercrombie Neil Male 2/13/1943 Tan
